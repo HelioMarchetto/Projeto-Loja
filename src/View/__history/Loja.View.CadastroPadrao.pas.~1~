@@ -1,0 +1,34 @@
+unit Loja.View.CadastroPadrao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TCadastro = class(TForm)
+    pnlPesquisa: TPanel;
+    pnlPrincipal: TPanel;
+    pnlBotoes: TPanel;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Label1: TLabel;
+    Edit1: TEdit;
+    Button5: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Cadastro: TCadastro;
+
+implementation
+
+{$R *.dfm}
+
+end.

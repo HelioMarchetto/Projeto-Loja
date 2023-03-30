@@ -1,0 +1,72 @@
+unit Loja.Model.Clientes;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Datasnap.Provider,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Datasnap.DBClient;
+
+type
+  TdmClientes = class(TDataModule)
+    dspClientes: TDataSetProvider;
+    cdsClientes: TClientDataSet;
+    cdsClientesID: TIntegerField;
+    cdsClientesNOME: TStringField;
+    cdsClientesCPF: TStringField;
+    sqlClientes: TFDQuery;
+    cdsClientesENDERECO: TStringField;
+    cdsClientesBAIRRO: TStringField;
+    cdsClientesNUMERO: TStringField;
+    cdsClientesCIDADE: TStringField;
+    cdsClientesCEP: TStringField;
+    cdsClientesUF: TStringField;
+    cdsClientesTELEFONE: TStringField;
+    cdsClientesCELULAR: TStringField;
+    cdsClientesDATA_CADASTRO: TDateField;
+    sqlGen: TFDQuery;
+    function ProximoID(GENERATOR: string): Integer;
+    procedure cdsClientesBeforePost(DataSet: TDataSet);
+  private
+    { Private declarations }
+
+  public
+    { Public declarations }
+
+  end;
+
+var
+  dmClientes: TdmClientes;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+uses Loja.Model.Conexao, Loja.View.PesquisaCadastroPadrao;
+
+{$R *.dfm}
+
+
+{ TdmClientes }
+
+{ TdmClientes }
+
+{ TdmClientes }
+
+procedure TdmClientes.cdsClientesBeforePost(DataSet: TDataSet);
+begin
+  if dmClientes.cdsClientes.State in [dsinsert] then
+     dmClientes.cdsClientesID.AsInteger := ProximoID('ID_CLIENTE');
+end;
+
+function TdmClientes.ProximoID(GENERATOR: string): Integer;
+begin
+  sqlGen.Close;
+  sqlGen.SQL.Clear;
+  sqlGen.SQL.Add('SELECT GEN_ID(' + GENERATOR + ',1) AS ID_ATUAL FROM RDB$DATABASE');
+  sqlGen.Open;
+  Result := sqlGen.FieldByName('ID_ATUAL').AsInteger;
+end;
+
+end.

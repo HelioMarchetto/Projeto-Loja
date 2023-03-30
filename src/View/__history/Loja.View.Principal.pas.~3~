@@ -1,0 +1,36 @@
+unit Loja.View.Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
+
+type
+  TForm4 = class(TForm)
+    MainMenu1: TMainMenu;
+    Manuteno1: TMenuItem;
+    Cadastros1: TMenuItem;
+    Clientes1: TMenuItem;
+    procedure Clientes1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form4: TForm4;
+
+implementation
+
+{$R *.dfm}
+
+uses Loja.View.PesquisaCadastroPadrao;
+
+procedure TForm4.Clientes1Click(Sender: TObject);
+begin
+  Form1.ShowModal;
+end;
+
+end.

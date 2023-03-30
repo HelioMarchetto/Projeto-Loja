@@ -1,0 +1,63 @@
+unit Loja.View.PesquisaClientes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Loja.View.PesquisaCadastroPadrao,
+  Data.DB, System.ImageList, Vcl.ImgList, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls,
+  Vcl.ExtCtrls;
+
+type
+  TPesquisaClientes = class(TunitPesquisaPadrao)
+    DataSource1: TDataSource;
+    btnExcluir: TButton;
+    procedure btnPesquisarClick(Sender: TObject);
+    procedure btnOkClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  PesquisaClientes: TPesquisaClientes;
+
+implementation
+
+{$R *.dfm}
+
+uses Loja.Model.Usuarios;
+
+procedure TPesquisaClientes.btnExcluirClick(Sender: TObject);
+begin
+  inherited;
+  begin
+  inherited;
+  if Application.MessageBox('Deseja realmente excluir o registro?', 'Selecione', MB_YESNO + MB_ICONQUESTION) <> mrYes then
+    exit;
+  try
+    dmUsuarios.cdsUsuarios.Delete;
+    dmUsuarios.cdsUsuarios.ApplyUpdates(0);
+    Application.MessageBox('Registro excluído com sucesso!', 'Sucesso', MB_OK + MB_ICONINFORMATION)
+  except on E: Exception do
+    Application.MessageBox('Erro ao excluir registro', 'Erro', MB_OK + MB_ICONERROR);
+  end;
+end;
+
+procedure TPesquisaClientes.btnOkClick(Sender: TObject);
+begin
+  inherited;
+  ModalResult := mrOk;
+end;
+
+procedure TPesquisaClientes.btnPesquisarClick(Sender: TObject);
+begin
+  inherited;
+  dmUsuarios.cdsUsuarios.Close;
+  dmUsuarios.cdsUsuarios.CommandText := 'SELECT * FROM TABELA_CLIENTE';
+  dmUsuarios.cdsUsuarios.Open;
+end;
+
+end.

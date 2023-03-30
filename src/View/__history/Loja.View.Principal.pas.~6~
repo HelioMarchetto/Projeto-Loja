@@ -1,0 +1,42 @@
+unit Loja.View.Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
+
+type
+  TunitPrincipal = class(TForm)
+    MainMenu1: TMainMenu;
+    Manuteno1: TMenuItem;
+    Cadastros1: TMenuItem;
+    Clientes1: TMenuItem;
+    procedure Clientes1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  unitPrincipal: TunitPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses Loja.View.CadastroCliente;
+
+procedure TunitPrincipal.Clientes1Click(Sender: TObject);
+begin
+  TCadastroClientes.Create(nil);
+  try
+    CadastroClientes.ShowModal;
+  finally
+    CadastroClientes.Free;
+  end;
+
+end;
+
+end.

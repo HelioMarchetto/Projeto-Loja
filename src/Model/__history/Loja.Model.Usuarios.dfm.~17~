@@ -1,0 +1,90 @@
+object dmUsuarios: TdmUsuarios
+  OldCreateOrder = False
+  Height = 252
+  Width = 320
+  object dspUsuarios: TDataSetProvider
+    DataSet = sqlUsuarios
+    Options = [poAllowCommandText, poUseQuoteChar]
+    Left = 216
+    Top = 136
+  end
+  object cdsUsuarios: TClientDataSet
+    Active = True
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspUsuarios'
+    Left = 80
+    Top = 144
+    object cdsUsuariosID: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object cdsUsuariosNOME: TStringField
+      FieldName = 'NOME'
+      Origin = 'NOME'
+      Size = 60
+    end
+    object cdsUsuariosCPF: TStringField
+      FieldName = 'CPF'
+      Origin = 'CPF'
+      Size = 10
+    end
+    object cdsUsuariosENDERECO: TStringField
+      FieldName = 'ENDERECO'
+      Origin = 'ENDERECO'
+      Size = 30
+    end
+    object cdsUsuariosBAIRRO: TStringField
+      FieldName = 'BAIRRO'
+      Origin = 'BAIRRO'
+      Size = 30
+    end
+    object cdsUsuariosNUMERO: TStringField
+      FieldName = 'NUMERO'
+      Origin = 'NUMERO'
+      FixedChar = True
+      Size = 4
+    end
+    object cdsUsuariosCIDADE: TStringField
+      FieldName = 'CIDADE'
+      Origin = 'CIDADE'
+      Size = 30
+    end
+    object cdsUsuariosCEP: TStringField
+      FieldName = 'CEP'
+      Origin = 'CEP'
+      FixedChar = True
+      Size = 8
+    end
+    object cdsUsuariosUF: TStringField
+      FieldName = 'UF'
+      Origin = 'UF'
+      FixedChar = True
+      Size = 2
+    end
+    object cdsUsuariosTELEFONE: TStringField
+      FieldName = 'TELEFONE'
+      Origin = 'TELEFONE'
+      Size = 11
+    end
+    object cdsUsuariosCELULAR: TStringField
+      FieldName = 'CELULAR'
+      Origin = 'CELULAR'
+      Size = 11
+    end
+    object cdsUsuariosDATA_CADASTRO: TDateField
+      FieldName = 'DATA_CADASTRO'
+      Origin = 'DATA_CADASTRO'
+    end
+  end
+  object sqlUsuarios: TFDQuery
+    Active = True
+    Connection = dmConexao.dmConexao
+    SQL.Strings = (
+      'SELECT * FROM TABELA_CLIENTE')
+    Left = 104
+    Top = 72
+  end
+end

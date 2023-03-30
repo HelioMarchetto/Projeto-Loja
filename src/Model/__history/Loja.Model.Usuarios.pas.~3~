@@ -1,0 +1,40 @@
+unit Loja.Model.Usuarios;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Datasnap.Provider,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Datasnap.DBClient;
+
+type
+  TdmUsuarios = class(TDataModule)
+    cdsUsuarios: TClientDataSet;
+    DataSource1: TDataSource;
+    dspUsuarios: TDataSetProvider;
+    sqlUsuarios: TFDQuery;
+    sqlUsuariosID: TIntegerField;
+    sqlUsuariosNOME: TStringField;
+    sqlUsuariosCPF: TStringField;
+    cdsUsuariosID: TIntegerField;
+    cdsUsuariosNOME: TStringField;
+    cdsUsuariosCPF: TStringField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dmUsuarios: TdmUsuarios;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+uses Loja.Model.Conexao;
+
+{$R *.dfm}
+
+end.

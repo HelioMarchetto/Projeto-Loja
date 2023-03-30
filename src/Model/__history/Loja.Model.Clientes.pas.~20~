@@ -1,0 +1,68 @@
+unit Loja.Model.Clientes;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Datasnap.Provider,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Datasnap.DBClient;
+
+type
+  TdmClientes = class(TDataModule)
+    dspClientes: TDataSetProvider;
+    cdsClientes: TClientDataSet;
+    cdsClientesID: TIntegerField;
+    cdsClientesNOME: TStringField;
+    cdsClientesCPF: TStringField;
+    sqlClientes: TFDQuery;
+    cdsClientesENDERECO: TStringField;
+    cdsClientesBAIRRO: TStringField;
+    cdsClientesNUMERO: TStringField;
+    cdsClientesCIDADE: TStringField;
+    cdsClientesCEP: TStringField;
+    cdsClientesUF: TStringField;
+    cdsClientesTELEFONE: TStringField;
+    cdsClientesCELULAR: TStringField;
+    cdsClientesDATA_CADASTRO: TDateField;
+  private
+    { Private declarations }
+
+  public
+    { Public declarations }
+    function GeneratorID (aName: string; Connection: TFDConnection; Incrementa: Boolean): integer;
+  end;
+
+var
+  dmClientes: TdmClientes;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+uses Loja.Model.Conexao, Loja.View.PesquisaCadastroPadrao;
+
+{$R *.dfm}
+
+
+{ TdmClientes }
+
+function TdmClientes.GeneratorID(aName: string; Connection: TFDConnection;
+  Incrementa: Boolean): integer;
+var
+  sqlID : TFDQuery;
+begin
+  sqlID.Create(nil);
+  try
+    if Incrementa then
+      sqlID.SQL.Add('SELECT CLIENTE_ID(' + aName + ',1) FROM RDB$DATABASE')
+    else
+      sqlID.SQL.Add('SELECT CLIENTE_ID(' + aName + ',1) FROM RDB$DATABASE');
+      sqlID.Open;
+      Result := sqlID.Fields[0].AsInteger;
+  finally
+    FreeAndNil(sqlID)
+  end;
+end;
+
+end.

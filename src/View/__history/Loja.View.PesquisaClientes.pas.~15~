@@ -1,0 +1,45 @@
+unit Loja.View.PesquisaClientes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Loja.View.PesquisaCadastroPadrao,
+  Data.DB, System.ImageList, Vcl.ImgList, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls,
+  Vcl.ExtCtrls;
+
+type
+  TPesquisaClientes = class(TunitPesquisaPadrao)
+    DataSource1: TDataSource;
+    procedure btnPesquisarClick(Sender: TObject);
+    procedure btnOkClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  PesquisaClientes: TPesquisaClientes;
+
+implementation
+
+{$R *.dfm}
+
+uses Loja.Model.Usuarios;
+
+procedure TPesquisaClientes.btnOkClick(Sender: TObject);
+begin
+  inherited;
+  ModalResult := mrOk;
+end;
+
+procedure TPesquisaClientes.btnPesquisarClick(Sender: TObject);
+begin
+  inherited;
+  dmUsuarios.cdsUsuarios.Close;
+  dmUsuarios.cdsUsuarios.CommandText := 'SELECT * FROM TABELA_CLIENTE';
+  dmUsuarios.cdsUsuarios.Open;
+end;
+
+end.

@@ -1,0 +1,60 @@
+object dmUsuarios: TdmUsuarios
+  OldCreateOrder = False
+  Height = 252
+  Width = 320
+  object cdsUsuarios: TClientDataSet
+    Active = True
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspUsuarios'
+    Left = 128
+    Top = 128
+    object cdsUsuariosID: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object cdsUsuariosNOME: TStringField
+      FieldName = 'NOME'
+      Origin = 'NOME'
+      Size = 60
+    end
+    object cdsUsuariosCPF: TStringField
+      FieldName = 'CPF'
+      Origin = 'CPF'
+      Size = 10
+    end
+  end
+  object dspUsuarios: TDataSetProvider
+    DataSet = sqlUsuarios
+    Options = [poAllowCommandText, poUseQuoteChar]
+    Left = 208
+    Top = 128
+  end
+  object sqlUsuarios: TFDQuery
+    Active = True
+    AutoCalcFields = False
+    Connection = dmConexao.dmConexao
+    SQL.Strings = (
+      'SELECT * FROM TABELA_CLIENTE')
+    Left = 208
+    Top = 60
+    object sqlUsuariosID: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object sqlUsuariosNOME: TStringField
+      FieldName = 'NOME'
+      Origin = 'NOME'
+      Size = 60
+    end
+    object sqlUsuariosCPF: TStringField
+      FieldName = 'CPF'
+      Origin = 'CPF'
+      Size = 10
+    end
+  end
+end

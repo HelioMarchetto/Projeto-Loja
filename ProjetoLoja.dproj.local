@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/01/23 21:49:35.000.385,=C:\Users\NETO\Documents\Embarcadero\Studio\Projects\Unit4.pas</Transaction>
+    <Transaction>2023/01/28 13:46:01.000.507,=C:\Users\NETO\Documents\Embarcadero\Studio\Projects\Unit4.pas</Transaction>
+    <Transaction>2023/03/24 22:18:46.000.986,=C:\Users\NETO\Documents\Embarcadero\Studio\Projects\Unit4.pas</Transaction>
+    <Transaction>2023/03/24 22:19:26.000.125,C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.Principal.pas=C:\Users\NETO\Documents\Embarcadero\Studio\Projects\Unit4.pas</Transaction>
+    <Transaction>2023/03/24 22:19:26.000.125,C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.Principal.dfm=C:\Users\NETO\Documents\Embarcadero\Studio\Projects\Unit4.dfm</Transaction>
+    <Transaction>2023/03/24 22:19:33.000.541,C:\Users\NETO\Desktop\Projeto Loja\ProjetoLoja.dproj=C:\Users\NETO\Documents\Embarcadero\Studio\Projects\Project6.dproj</Transaction>
+    <Transaction>2023/03/24 22:24:05.000.630,=C:\Users\NETO\Desktop\Projeto Loja\Unit1.pas</Transaction>
+    <Transaction>2023/03/24 23:05:49.000.502,C:\Users\NETO\Desktop\Projeto Loja\Unit1.dfm=C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.Cadastro.dfm</Transaction>
+    <Transaction>2023/03/24 23:05:49.000.502,C:\Users\NETO\Desktop\Projeto Loja\Unit1.pas=C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.Cadastro.pas</Transaction>
+    <Transaction>2023/03/25 09:24:57.000.697,C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.Cadastro.pas=</Transaction>
+    <Transaction>2023/03/25 09:25:29.000.361,=C:\Users\NETO\Desktop\Projeto Loja\Unit1.pas</Transaction>
+    <Transaction>2023/03/25 09:29:57.000.660,C:\Users\NETO\Desktop\Projeto Loja\Unit1.dfm=C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.PesquisaCadastroPadrao.dfm</Transaction>
+    <Transaction>2023/03/25 09:29:57.000.660,C:\Users\NETO\Desktop\Projeto Loja\Unit1.pas=C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.PesquisaCadastroPadrao.pas</Transaction>
+    <Transaction>2023/03/25 09:39:53.000.357,=C:\Users\NETO\Desktop\Projeto Loja\Unit1.pas</Transaction>
+    <Transaction>2023/03/25 09:40:18.000.941,C:\Users\NETO\Desktop\Projeto Loja\Unit1.pas=C:\Users\NETO\Desktop\Projeto Loja\src\Model\LOja.Model.Conexao.pas</Transaction>
+    <Transaction>2023/03/25 09:40:18.000.941,C:\Users\NETO\Desktop\Projeto Loja\Unit1.dfm=C:\Users\NETO\Desktop\Projeto Loja\src\Model\LOja.Model.Conexao.dfm</Transaction>
+    <Transaction>2023/03/25 09:40:55.000.538,C:\Users\NETO\Desktop\Projeto Loja\src\Model\LOja.Model.Conexao.pas=</Transaction>
+    <Transaction>2023/03/25 09:41:08.000.586,=C:\Users\NETO\Desktop\Projeto Loja\Unit1.pas</Transaction>
+    <Transaction>2023/03/25 09:41:28.000.662,C:\Users\NETO\Desktop\Projeto Loja\Unit1.pas=C:\Users\NETO\Desktop\Projeto Loja\src\Model\Loja.Model.Conexao.pas</Transaction>
+    <Transaction>2023/03/25 09:41:28.000.662,C:\Users\NETO\Desktop\Projeto Loja\Unit1.dfm=C:\Users\NETO\Desktop\Projeto Loja\src\Model\Loja.Model.Conexao.dfm</Transaction>
+    <Transaction>2023/03/25 09:51:33.000.028,=C:\Users\NETO\Desktop\Projeto Loja\Unit2.pas</Transaction>
+    <Transaction>2023/03/25 09:55:23.000.964,C:\Users\NETO\Desktop\Projeto Loja\Unit2.pas=C:\Users\NETO\Desktop\Projeto Loja\src\Model\Loja.Model.Usuarios.pas</Transaction>
+    <Transaction>2023/03/25 09:55:23.000.964,C:\Users\NETO\Desktop\Projeto Loja\Unit2.dfm=C:\Users\NETO\Desktop\Projeto Loja\src\Model\Loja.Model.Usuarios.dfm</Transaction>
+    <Transaction>2023/03/25 10:41:17.000.449,=C:\Users\NETO\Desktop\Projeto Loja\Unit2.pas</Transaction>
+    <Transaction>2023/03/25 10:46:11.000.329,C:\Users\NETO\Desktop\Projeto Loja\Unit2.pas=C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.CadastroPadrao.pas</Transaction>
+    <Transaction>2023/03/25 10:46:11.000.329,C:\Users\NETO\Desktop\Projeto Loja\Unit2.dfm=C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.CadastroPadrao.dfm</Transaction>
+    <Transaction>2023/03/25 11:27:19.000.075,=C:\Users\NETO\Desktop\Projeto Loja\Unit1.pas</Transaction>
+    <Transaction>2023/03/25 11:27:42.000.847,C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.CadastroCliente.dfm=C:\Users\NETO\Desktop\Projeto Loja\Unit1.dfm</Transaction>
+    <Transaction>2023/03/25 11:27:42.000.847,C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.CadastroCliente.pas=C:\Users\NETO\Desktop\Projeto Loja\Unit1.pas</Transaction>
+    <Transaction>2023/03/25 12:00:06.000.893,=C:\Users\NETO\Desktop\Projeto Loja\Unit2.pas</Transaction>
+    <Transaction>2023/03/25 12:01:15.000.408,C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.PesquisaClientes.dfm=C:\Users\NETO\Desktop\Projeto Loja\Unit2.dfm</Transaction>
+    <Transaction>2023/03/25 12:01:15.000.408,C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.PesquisaClientes.pas=C:\Users\NETO\Desktop\Projeto Loja\Unit2.pas</Transaction>
+    <Transaction>2023/03/25 13:37:59.000.995,=C:\Users\NETO\Desktop\Projeto Loja\Unit1.pas</Transaction>
+    <Transaction>2023/03/25 13:38:28.000.284,C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.Splash.dfm=C:\Users\NETO\Desktop\Projeto Loja\Unit1.dfm</Transaction>
+    <Transaction>2023/03/25 13:38:28.000.284,C:\Users\NETO\Desktop\Projeto Loja\src\View\Loja.View.Splash.pas=C:\Users\NETO\Desktop\Projeto Loja\Unit1.pas</Transaction>
+    <Transaction>2023/03/25 22:39:38.000.053,=C:\Users\NETO\Desktop\Projeto Loja\Unit1.pas</Transaction>
+    <Transaction>2023/03/27 20:44:55.000.049,C:\Users\NETO\Desktop\Projeto Loja\src\Model\Loja.Model.Usuarios.dfm=C:\Users\NETO\Desktop\Projeto Loja\src\Model\Loja.Model.Clientes.dfm</Transaction>
+    <Transaction>2023/03/27 20:44:55.000.049,C:\Users\NETO\Desktop\Projeto Loja\src\Model\Loja.Model.Usuarios.pas=C:\Users\NETO\Desktop\Projeto Loja\src\Model\Loja.Model.Clientes.pas</Transaction>
+  </Transactions>
+</BorlandProject>
