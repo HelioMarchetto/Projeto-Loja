@@ -4,9 +4,9 @@ object dmConexao: TdmConexao
   Width = 375
   object dmConexao: TFDConnection
     Params.Strings = (
-      'Database=C:\Users\NETO\Desktop\Projeto Loja\db\OFICIAL.FDB'
-      'User_Name=SYSDBA'
+      'User_Name=sysdba'
       'Password=masterkey'
+      'Database=C:\Users\NETO\Desktop\Projeto Loja\db\OFICIAL.FDB'
       'DriverID=FB')
     Connected = True
     LoginPrompt = False

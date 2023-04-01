@@ -1,0 +1,9 @@
+inherited unitPesquisaPadrao1: TunitPesquisaPadrao1
+  Caption = 'unitPesquisaPadrao1'
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DataSource1: TDataSource
+    Left = 584
+    Top = 337
+  end
+end

@@ -16,9 +16,11 @@ type
     Panel1: TPanel;
     Image1: TImage;
     Sair1: TMenuItem;
+    Veiculos1: TMenuItem;
     procedure Clientes1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
+    procedure Veiculos1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,7 +34,7 @@ implementation
 
 {$R *.dfm}
 
-uses Loja.View.CadastroCliente, Loja.View.Splash;
+uses Loja.View.CadastroCliente, Loja.View.Splash, Loja.View.CadastroVeiculos;
 
 procedure TunitPrincipal.Clientes1Click(Sender: TObject);
 begin
@@ -52,6 +54,11 @@ end;
 procedure TunitPrincipal.Sair1Click(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TunitPrincipal.Veiculos1Click(Sender: TObject);
+begin
+  unitCadastroVeiculos.Show;
 end;
 
 end.

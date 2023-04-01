@@ -5706,7 +5706,8 @@ object unitPrincipal: TunitPrincipal
       477B12FD0E235F43445C216C25515A7029B322E874AD8E7C8DDBA347DCC825C0
       98BB8BA45091CF71B8F51BB44CC0ADAAC32A4898E04B918A49C7811CE3A56849
       F6C8F82332F5631429C0C865D8EBBD8E668E748FFF0013FFD9}
-    ExplicitTop = -6
+    ExplicitWidth = 2192
+    ExplicitHeight = 1367
   end
   object Panel1: TPanel
     Left = 0
@@ -5728,6 +5729,10 @@ object unitPrincipal: TunitPrincipal
         object Clientes1: TMenuItem
           Caption = 'Clientes'
           OnClick = Clientes1Click
+        end
+        object Veiculos1: TMenuItem
+          Caption = 'Veiculos'
+          OnClick = Veiculos1Click
         end
       end
     end

@@ -1,0 +1,75 @@
+inherited unitPesquisaPadrao1: TunitPesquisaPadrao1
+  Caption = 'unitPesquisaPadrao1'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pnlPesquisar: TPanel
+    inherited btnPesquisar: TButton
+      OnClick = btnPesquisarClick
+    end
+  end
+  inherited pnlGrid: TPanel
+    inherited DBGrid1: TDBGrid
+      DataSource = DataSource1
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'ID'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'DESCRICAO INTERNA'
+          Width = 183
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'DESCRICAO OFICIAL'
+          Width = 156
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'GRUPO'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'MARCA'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'UF'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'COR'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'ANO MODELO'
+          Width = 77
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'ANO FABRICA'#199#195'O'
+          Width = 118
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'COMBUSTIVEL'
+          Visible = True
+        end>
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = dmVeiculos.sqlVeiculos
+    Left = 584
+    Top = 337
+  end
+end

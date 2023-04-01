@@ -9,7 +9,6 @@ object dmClientes: TdmClientes
     Top = 136
   end
   object cdsClientes: TClientDataSet
-    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'dspClientes'
@@ -90,7 +89,6 @@ object dmClientes: TdmClientes
     Top = 72
   end
   object sqlGen: TFDQuery
-    Active = True
     Connection = dmConexao.dmConexao
     SQL.Strings = (
       'SELECT GEN_ID (id_cliente,1)  AS ID_ATUAL FROM RDB$DATABASE')

@@ -1,0 +1,94 @@
+object dmVeiculos: TdmVeiculos
+  OldCreateOrder = False
+  Height = 205
+  Width = 271
+  object cdsVeiculos: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspVeiculos'
+    Left = 48
+    Top = 128
+    object cdsVeiculosID: TIntegerField
+      FieldName = 'ID'
+      Required = True
+    end
+    object cdsVeiculosDESCRICAO_INTERNA: TStringField
+      FieldName = 'DESCRICAO_INTERNA'
+      Size = 50
+    end
+    object cdsVeiculosDESCRICAO_OFICIAL: TStringField
+      FieldName = 'DESCRICAO_OFICIAL'
+      Size = 50
+    end
+    object cdsVeiculosGRUPO: TStringField
+      FieldName = 'GRUPO'
+    end
+    object cdsVeiculosMARCA: TStringField
+      FieldName = 'MARCA'
+    end
+    object cdsVeiculosOBSERVACOES: TStringField
+      FieldName = 'OBSERVACOES'
+      Size = 80
+    end
+    object cdsVeiculosFOTO_VEICULO: TBlobField
+      FieldName = 'FOTO_VEICULO'
+    end
+    object cdsVeiculosMODELO: TStringField
+      FieldName = 'MODELO'
+      Size = 30
+    end
+    object cdsVeiculosCHASSI: TStringField
+      FieldName = 'CHASSI'
+      Size = 30
+    end
+    object cdsVeiculosPLACA: TStringField
+      FieldName = 'PLACA'
+    end
+    object cdsVeiculosRENAVAM: TStringField
+      FieldName = 'RENAVAM'
+    end
+    object cdsVeiculosUF: TStringField
+      FieldName = 'UF'
+      FixedChar = True
+      Size = 2
+    end
+    object cdsVeiculosCOR: TStringField
+      FieldName = 'COR'
+      Size = 15
+    end
+    object cdsVeiculosANO_MODELO: TStringField
+      FieldName = 'ANO_MODELO'
+      FixedChar = True
+      Size = 4
+    end
+    object cdsVeiculosANO_FABRICACAO: TStringField
+      FieldName = 'ANO_FABRICACAO'
+      FixedChar = True
+      Size = 4
+    end
+    object cdsVeiculosCONDICAO: TStringField
+      FieldName = 'CONDICAO'
+      Size = 15
+    end
+    object cdsVeiculosCOMBUSTIVEL: TStringField
+      FieldName = 'COMBUSTIVEL'
+      Size = 15
+    end
+    object cdsVeiculosNUM_PROP: TStringField
+      FieldName = 'NUM_PROP'
+      Size = 4
+    end
+  end
+  object dspVeiculos: TDataSetProvider
+    DataSet = sqlVeiculos
+    Left = 176
+    Top = 104
+  end
+  object sqlVeiculos: TFDQuery
+    Connection = dmConexao.dmConexao
+    SQL.Strings = (
+      'SELECT * FROM TABELA_VEICULO')
+    Left = 104
+    Top = 56
+  end
+end

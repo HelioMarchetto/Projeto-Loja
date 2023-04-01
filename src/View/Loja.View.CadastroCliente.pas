@@ -37,6 +37,7 @@ type
     edtCEP: TEdit;
     edtPesquisaID: TEdit;
     sqlPesquisaCliente: TFDQuery;
+    Panel1: TPanel;
     procedure btnPesquisarClick(Sender: TObject);
     procedure btnFecharClick(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);

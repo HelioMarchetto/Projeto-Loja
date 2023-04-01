@@ -49,69 +49,68 @@ object Cadastro: TCadastro
       TabOrder = 1
     end
   end
-  object pnlPrincipal: TPanel
+  object pnlBotoes: TPanel
     Left = 0
-    Top = 69
+    Top = 452
     Width = 718
-    Height = 448
-    Align = alClient
+    Height = 65
+    Align = alBottom
+    ParentBackground = False
     TabOrder = 1
-    object pnlBotoes: TPanel
-      Left = 1
-      Top = 382
-      Width = 716
-      Height = 65
-      Align = alBottom
-      ParentBackground = False
+    ExplicitLeft = 1
+    ExplicitTop = 382
+    ExplicitWidth = 716
+    object btnFechar: TButton
+      AlignWithMargins = True
+      Left = 636
+      Top = 4
+      Width = 78
+      Height = 57
+      Align = alRight
+      Caption = 'Fechar'
+      ImageIndex = 1
+      Images = ImageList1
       TabOrder = 0
-      object btnFechar: TButton
-        AlignWithMargins = True
-        Left = 634
-        Top = 4
-        Width = 78
-        Height = 57
-        Align = alRight
-        Caption = 'Fechar'
-        ImageIndex = 1
-        Images = ImageList1
-        TabOrder = 0
-      end
-      object btnExcluir: TButton
-        AlignWithMargins = True
-        Left = 550
-        Top = 4
-        Width = 78
-        Height = 57
-        Align = alRight
-        Caption = 'Excluir'
-        ImageIndex = 2
-        Images = ImageList1
-        TabOrder = 1
-      end
-      object btnGravar: TButton
-        AlignWithMargins = True
-        Left = 466
-        Top = 4
-        Width = 78
-        Height = 57
-        Align = alRight
-        Caption = 'Gravar'
-        ImageIndex = 4
-        Images = ImageList1
-        TabOrder = 2
-      end
-      object btnNovo: TButton
-        AlignWithMargins = True
-        Left = 382
-        Top = 4
-        Width = 78
-        Height = 57
-        Align = alRight
-        Caption = 'Novo'
-        ImageIndex = 0
-        Images = ImageList1
-        TabOrder = 3
-      end
+      ExplicitLeft = 634
+    end
+    object btnExcluir: TButton
+      AlignWithMargins = True
+      Left = 552
+      Top = 4
+      Width = 78
+      Height = 57
+      Align = alRight
+      Caption = 'Excluir'
+      ImageIndex = 2
+      Images = ImageList1
+      TabOrder = 1
+      ExplicitLeft = 550
+    end
+    object btnGravar: TButton
+      AlignWithMargins = True
+      Left = 468
+      Top = 4
+      Width = 78
+      Height = 57
+      Align = alRight
+      Caption = 'Gravar'
+      ImageIndex = 4
+      Images = ImageList1
+      TabOrder = 2
+      ExplicitLeft = 466
+    end
+    object btnNovo: TButton
+      AlignWithMargins = True
+      Left = 384
+      Top = 4
+      Width = 78
+      Height = 57
+      Align = alRight
+      Caption = 'Novo'
+      ImageIndex = 0
+      Images = ImageList1
+      TabOrder = 3
+      ExplicitLeft = 382
     end
   end
   object ImageList1: TImageList

@@ -1,0 +1,26 @@
+inherited unitPesquisaVeiculos: TunitPesquisaVeiculos
+  Caption = 'Pesquisa de Veiculos'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pnlPesquisar: TPanel
+    inherited btnPesquisar: TButton
+      OnClick = btnPesquisarClick
+    end
+  end
+  inherited pnlGrid: TPanel
+    inherited DBGrid1: TDBGrid
+      DataSource = unitCadastroVeiculos.DataSource1
+      OnTitleClick = DBGrid1TitleClick
+    end
+  end
+  inherited pnlButaoOk: TPanel
+    inherited btnOk: TButton
+      OnClick = btnOkClick
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = dmVeiculos.sqlVeiculos
+    Left = 584
+    Top = 337
+  end
+end

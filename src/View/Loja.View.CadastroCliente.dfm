@@ -2,249 +2,187 @@ inherited unitCadastroClientes: TunitCadastroClientes
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Cadastro de Clientes'
-  ClientHeight = 537
-  ClientWidth = 733
+  ClientHeight = 518
+  ClientWidth = 717
   KeyPreview = True
   OnKeyDown = FormKeyDown
   OnShow = FormShow
-  ExplicitWidth = 739
-  ExplicitHeight = 566
+  ExplicitWidth = 723
+  ExplicitHeight = 547
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlPesquisa: TPanel
-    Width = 733
-    ExplicitWidth = 733
-    inherited edtPesquisar: TEdit
-      Left = 99
-      Width = 470
-      Enabled = False
-      TabOrder = 2
-      ExplicitLeft = 99
-      ExplicitWidth = 470
-    end
-    inherited btnPesquisar: TButton
-      Left = 631
-      ImageIndex = 5
-      TabOrder = 0
-      OnClick = btnPesquisarClick
-      ExplicitLeft = 631
-    end
-    object edtPesquisaID: TEdit
-      Left = 16
-      Top = 35
-      Width = 53
-      Height = 21
-      TabOrder = 1
-      OnKeyDown = edtPesquisaIDKeyDown
-    end
-  end
-  inherited pnlPrincipal: TPanel
-    Width = 733
-    Height = 468
+    Width = 717
+    Height = 65
     BevelOuter = bvNone
     Font.Height = -13
     ParentFont = False
-    ExplicitWidth = 733
-    ExplicitHeight = 468
-    object Label1: TLabel [0]
-      Left = 16
-      Top = 32
-      Width = 33
+    ExplicitWidth = 717
+    ExplicitHeight = 65
+    inherited lblPesquisar: TLabel
+      Top = 12
+      Width = 55
       Height = 16
-      Caption = 'Nome'
+      ExplicitTop = 12
+      ExplicitWidth = 55
+      ExplicitHeight = 16
     end
-    object Label2: TLabel [1]
-      Left = 16
-      Top = 88
-      Width = 53
-      Height = 16
-      Caption = 'Endere'#231'o'
-    end
-    object Label3: TLabel [2]
-      Left = 344
-      Top = 88
-      Width = 34
-      Height = 16
-      Caption = 'Bairro'
-    end
-    object Label4: TLabel [3]
-      Left = 604
-      Top = 88
-      Width = 45
-      Height = 16
-      Caption = 'N'#250'mero'
-    end
-    object Label5: TLabel [4]
-      Left = 16
-      Top = 152
-      Width = 39
-      Height = 16
-      Caption = 'Cidade'
-    end
-    object Label6: TLabel [5]
-      Left = 604
-      Top = 152
-      Width = 15
-      Height = 16
-      Caption = 'UF'
-    end
-    object Label7: TLabel [6]
-      Left = 344
-      Top = 152
-      Width = 22
-      Height = 16
-      Caption = 'CEP'
-    end
-    object Label8: TLabel [7]
-      Left = 16
-      Top = 216
-      Width = 22
-      Height = 16
-      Caption = 'CPF'
-    end
-    object edtNome: TEdit [8]
-      Left = 16
-      Top = 51
-      Width = 553
-      Height = 24
+    inherited btnPesquisar: TButton [1]
+      Top = 3
+      Height = 59
+      ImageIndex = 5
       TabOrder = 0
+      OnClick = btnPesquisarClick
+      ExplicitTop = 3
+      ExplicitHeight = 59
     end
-    object edtEndereco: TEdit [9]
+    object edtPesquisaID: TEdit [2]
       Left = 16
-      Top = 110
-      Width = 289
+      Top = 29
+      Width = 53
       Height = 24
       TabOrder = 1
+      OnKeyDown = edtPesquisaIDKeyDown
     end
-    object edtBairro: TEdit [10]
-      Left = 344
-      Top = 110
-      Width = 225
+    inherited edtPesquisar: TEdit [3]
+      Left = 99
+      Top = 29
+      Width = 470
       Height = 24
+      Enabled = False
       TabOrder = 2
+      ExplicitLeft = 99
+      ExplicitTop = 29
+      ExplicitWidth = 470
+      ExplicitHeight = 24
     end
-    object edtNumero: TEdit [11]
-      Left = 604
-      Top = 110
-      Width = 85
-      Height = 24
-      TabOrder = 3
-    end
-    object edtCidade: TEdit [12]
-      Left = 16
-      Top = 174
-      Width = 289
-      Height = 24
+  end
+  inherited pnlBotoes: TPanel
+    Top = 453
+    Width = 717
+    ExplicitLeft = 0
+    ExplicitTop = 453
+    ExplicitWidth = 717
+    inherited btnFechar: TButton
+      Left = 624
+      Width = 89
+      ImageIndex = 3
       TabOrder = 4
+      OnClick = btnFecharClick
+      ExplicitLeft = 624
+      ExplicitWidth = 89
     end
-    object edtCPF: TEdit [13]
+    inherited btnExcluir: TButton
+      Left = 529
+      Width = 89
+      ImageIndex = 4
+      TabOrder = 3
+      OnClick = btnExcluirClick
+      ExplicitLeft = 529
+      ExplicitWidth = 89
+    end
+    inherited btnGravar: TButton
+      Left = 339
+      Width = 89
+      ImageIndex = 1
+      ImageMargins.Left = 4
+      TabOrder = 0
+      OnClick = btnGravarClick
+      ExplicitLeft = 339
+      ExplicitWidth = 89
+    end
+    inherited btnNovo: TButton
+      Left = 244
+      Width = 89
+      TabOrder = 1
+      OnClick = btnNovoClick
+      ExplicitLeft = 244
+      ExplicitWidth = 89
+    end
+    object btnCancelar: TButton
+      AlignWithMargins = True
+      Left = 434
+      Top = 4
+      Width = 89
+      Height = 57
+      Align = alRight
+      Caption = 'Cancelar'
+      ImageIndex = 2
+      ImageMargins.Right = 1
+      Images = ImageList1
+      TabOrder = 2
+      OnClick = btnCancelarClick
+    end
+  end
+  object Panel1: TPanel [2]
+    Left = 0
+    Top = 65
+    Width = 717
+    Height = 388
+    Align = alClient
+    TabOrder = 2
+    object Label1: TLabel
       Left = 16
-      Top = 238
-      Width = 289
-      Height = 24
-      TabOrder = 7
+      Top = 16
+      Width = 27
+      Height = 13
+      Caption = 'Nome'
     end
-    object gbContatos: TGroupBox [14]
+    object Label2: TLabel
+      Left = 16
+      Top = 72
+      Width = 45
+      Height = 13
+      Caption = 'Endere'#231'o'
+    end
+    object Label3: TLabel
       Left = 344
-      Top = 238
-      Width = 265
-      Height = 139
-      Caption = 'Contatos'
-      TabOrder = 8
-      object Label9: TLabel
-        Left = 11
-        Top = 27
-        Width = 50
-        Height = 16
-        Caption = 'Telefone'
-      end
-      object Label10: TLabel
-        Left = 11
-        Top = 82
-        Width = 40
-        Height = 16
-        Caption = 'Celular'
-      end
-      object edtContatoTelefone: TEdit
-        Left = 11
-        Top = 49
-        Width = 198
-        Height = 24
-        TabOrder = 0
-      end
-      object edtContatoCelular: TEdit
-        Left = 11
-        Top = 104
-        Width = 198
-        Height = 24
-        TabOrder = 1
-      end
+      Top = 72
+      Width = 28
+      Height = 13
+      Caption = 'Bairro'
     end
-    inherited pnlBotoes: TPanel
-      Left = 0
-      Top = 403
-      Width = 733
-      TabOrder = 9
-      ExplicitLeft = 0
-      ExplicitTop = 403
-      ExplicitWidth = 733
-      inherited btnFechar: TButton
-        Left = 640
-        Width = 89
-        ImageIndex = 3
-        TabOrder = 4
-        OnClick = btnFecharClick
-        ExplicitLeft = 640
-        ExplicitWidth = 89
-      end
-      inherited btnExcluir: TButton
-        Left = 545
-        Width = 89
-        ImageIndex = 4
-        TabOrder = 3
-        OnClick = btnExcluirClick
-        ExplicitLeft = 545
-        ExplicitWidth = 89
-      end
-      inherited btnGravar: TButton
-        Left = 355
-        Width = 89
-        ImageIndex = 1
-        ImageMargins.Left = 4
-        TabOrder = 0
-        OnClick = btnGravarClick
-        ExplicitLeft = 355
-        ExplicitWidth = 89
-      end
-      inherited btnNovo: TButton
-        Left = 260
-        Width = 89
-        TabOrder = 1
-        OnClick = btnNovoClick
-        ExplicitLeft = 260
-        ExplicitWidth = 89
-      end
-      object btnCancelar: TButton
-        AlignWithMargins = True
-        Left = 450
-        Top = 4
-        Width = 89
-        Height = 57
-        Align = alRight
-        Caption = 'Cancelar'
-        ImageIndex = 2
-        ImageMargins.Right = 1
-        Images = ImageList1
-        TabOrder = 2
-        OnClick = btnCancelarClick
-      end
+    object Label4: TLabel
+      Left = 604
+      Top = 72
+      Width = 37
+      Height = 13
+      Caption = 'N'#250'mero'
+    end
+    object Label5: TLabel
+      Left = 16
+      Top = 136
+      Width = 33
+      Height = 13
+      Caption = 'Cidade'
+    end
+    object Label6: TLabel
+      Left = 604
+      Top = 136
+      Width = 13
+      Height = 13
+      Caption = 'UF'
+    end
+    object Label7: TLabel
+      Left = 344
+      Top = 136
+      Width = 19
+      Height = 13
+      Caption = 'CEP'
+    end
+    object Label8: TLabel
+      Left = 16
+      Top = 197
+      Width = 19
+      Height = 13
+      Caption = 'CPF'
     end
     object cbUF: TComboBox
       Left = 604
-      Top = 174
+      Top = 158
       Width = 65
-      Height = 24
-      TabOrder = 6
+      Height = 21
+      TabOrder = 0
       Items.Strings = (
         'AC'
         'AL'
@@ -274,12 +212,90 @@ inherited unitCadastroClientes: TunitCadastroClientes
         'SE'
         'TO')
     end
+    object edtBairro: TEdit
+      Left = 344
+      Top = 94
+      Width = 225
+      Height = 21
+      TabOrder = 1
+    end
     object edtCEP: TEdit
       Left = 344
-      Top = 174
+      Top = 158
       Width = 225
-      Height = 24
+      Height = 21
+      TabOrder = 2
+    end
+    object edtCidade: TEdit
+      Left = 16
+      Top = 158
+      Width = 289
+      Height = 21
+      TabOrder = 3
+    end
+    object edtCPF: TEdit
+      Left = 16
+      Top = 222
+      Width = 289
+      Height = 21
+      TabOrder = 4
+    end
+    object edtEndereco: TEdit
+      Left = 16
+      Top = 94
+      Width = 289
+      Height = 21
       TabOrder = 5
+    end
+    object edtNome: TEdit
+      Left = 16
+      Top = 35
+      Width = 553
+      Height = 21
+      TabOrder = 6
+    end
+    object edtNumero: TEdit
+      Left = 604
+      Top = 94
+      Width = 85
+      Height = 21
+      TabOrder = 7
+    end
+    object gbContatos: TGroupBox
+      Left = 344
+      Top = 222
+      Width = 265
+      Height = 139
+      Caption = 'Contatos'
+      TabOrder = 8
+      object Label9: TLabel
+        Left = 11
+        Top = 27
+        Width = 42
+        Height = 13
+        Caption = 'Telefone'
+      end
+      object Label10: TLabel
+        Left = 11
+        Top = 82
+        Width = 33
+        Height = 13
+        Caption = 'Celular'
+      end
+      object edtContatoTelefone: TEdit
+        Left = 11
+        Top = 49
+        Width = 198
+        Height = 21
+        TabOrder = 0
+      end
+      object edtContatoCelular: TEdit
+        Left = 11
+        Top = 104
+        Width = 198
+        Height = 21
+        TabOrder = 1
+      end
     end
   end
   inherited ImageList1: TImageList

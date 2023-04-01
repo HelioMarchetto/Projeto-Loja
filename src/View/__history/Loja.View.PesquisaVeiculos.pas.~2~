@@ -1,0 +1,29 @@
+unit Loja.View.PesquisaVeiculos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Loja.View.PesquisaCadastroPadrao,
+  Data.DB, System.ImageList, Vcl.ImgList, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls,
+  Vcl.ExtCtrls;
+
+type
+  TunitPesquisaPadrao1 = class(TunitPesquisaPadrao)
+    DataSource1: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  unitPesquisaPadrao1: TunitPesquisaPadrao1;
+
+implementation
+
+{$R *.dfm}
+
+uses Loja.Model.Veiculos, Loja.View.CadastroVeiculos;
+
+end.
