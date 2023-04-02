@@ -74,7 +74,7 @@ procedure TunitCadastroClientes.btnExcluirClick(Sender: TObject);
 begin
   inherited;
   if Application.MessageBox('Deseja realmente excluir o registro?', 'Selecione', MB_YESNO + MB_ICONQUESTION) <> mrYes then
-  exit;
+    exit;
   try
     dmClientes.cdsClientes.Delete;
     dmClientes.cdsClientes.ApplyUpdates(0);

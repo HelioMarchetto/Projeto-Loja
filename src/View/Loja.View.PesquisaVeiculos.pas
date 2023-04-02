@@ -39,7 +39,7 @@ procedure TunitPesquisaVeiculos.btnPesquisarClick(Sender: TObject);
 begin
   inherited;
   dmVeiculos.cdsVeiculos.Close;
-  dmVeiculos.cdsVeiculos.CommandText := 'SELECT * FROM TABELA_VEICULO';
+  dmVeiculos.cdsVeiculos.CommandText := 'SELECT * FROM TABELA_VEICULO ORDER BY ID';
   dmVeiculos.cdsVeiculos.Open;
 end;
 

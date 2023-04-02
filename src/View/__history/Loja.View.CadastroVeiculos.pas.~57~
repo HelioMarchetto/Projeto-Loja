@@ -1,0 +1,246 @@
+unit Loja.View.CadastroVeiculos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Loja.View.CadastroPadrao,
+  System.ImageList, Vcl.ImgList, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask,
+  Vcl.DBCtrls, Vcl.ComCtrls, Data.DB, Loja.View.PesquisaVeiculos;
+
+type
+  TunitCadastroVeiculos = class(TCadastro)
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    btnCancelar: TButton;
+    edtDescInterna: TDBEdit;
+    Label1: TLabel;
+    edtDescOficial: TDBEdit;
+    Label2: TLabel;
+    edtGrupo: TDBEdit;
+    Label3: TLabel;
+    edtMarca: TDBEdit;
+    Label4: TLabel;
+    DBImage1: TDBImage;
+    Label5: TLabel;
+    txtObservacoes: TDBMemo;
+    Label6: TLabel;
+    edtModelo: TDBEdit;
+    Label7: TLabel;
+    edtNumProp: TDBEdit;
+    Label8: TLabel;
+    Label9: TLabel;
+    edtCor: TDBEdit;
+    Label10: TLabel;
+    edtAnoModelo: TDBEdit;
+    Label11: TLabel;
+    edtAnoFab: TDBEdit;
+    Label12: TLabel;
+    cbCombustivel: TDBComboBox;
+    Label13: TLabel;
+    edtChassi: TDBEdit;
+    Label14: TLabel;
+    cbCondicao: TDBComboBox;
+    DataSource1: TDataSource;
+    DBEdit1: TDBEdit;
+    edtPlaca: TDBEdit;
+    Label15: TLabel;
+    Label16: TLabel;
+    edtRenavam: TDBEdit;
+    cbPlacaUF: TDBComboBox;
+    Label17: TLabel;
+    procedure btnNovoClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
+    procedure btnGravarClick(Sender: TObject);
+    procedure btnFecharClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
+    procedure btnPesquisarClick(Sender: TObject);
+    procedure DBEdit1KeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  unitCadastroVeiculos: TunitCadastroVeiculos;
+
+implementation
+
+{$R *.dfm}
+
+uses Loja.Model.Veiculos;
+
+procedure TunitCadastroVeiculos.btnCancelarClick(Sender: TObject);
+begin
+  inherited;
+  dmVeiculos.cdsVeiculos.Cancel;
+  btnNovo.Enabled := True;
+  btnExcluir.Enabled := True;
+  dmVeiculos.cdsVeiculos.Close;
+end;
+
+procedure TunitCadastroVeiculos.btnExcluirClick(Sender: TObject);
+begin
+  inherited;
+  if Application.MessageBox('Deseja realmente excluir esse registro?', 'Atenção', MB_YESNO + MB_ICONQUESTION) <> mrYes then
+  begin
+    exit;
+  end;
+  try
+    dmVeiculos.cdsVeiculos.Open;
+    dmVeiculos.cdsVeiculos.Delete;
+    btnNovo.Enabled := True;
+    btnExcluir.Enabled := True;
+    dmVeiculos.cdsVeiculos.Close;
+  except on E: Exception do
+    Application.MessageBox('Erro ao excluir registro!', 'Erro', MB_OK + MB_ICONERROR)
+  end;
+end;
+
+procedure TunitCadastroVeiculos.btnFecharClick(Sender: TObject);
+begin
+  inherited;
+  btnNovo.Enabled := True;
+  btnExcluir.Enabled := True;
+  Close;
+end;
+
+procedure TunitCadastroVeiculos.btnGravarClick(Sender: TObject);
+begin
+  inherited;
+  if (Trim(edtDescInterna.Text) = '') or (Trim(edtDescOficial.Text) = '') then
+  begin
+    Application.MessageBox('Os campos Descrição Interna e Descrição Oficial devem ser preenchidos!', 'Atenção', MB_OK + MB_ICONINFORMATION);
+    edtDescInterna.SetFocus;
+    abort;
+  end;
+
+  if Trim(edtMarca.Text) = '' then
+  begin
+    Application.MessageBox('O campo Marca deve ser preenchido!', 'Atenção', MB_OK + MB_ICONINFORMATION);
+    edtMarca.SetFocus;
+    abort;
+  end;
+
+  if Trim(edtModelo.Text) = '' then
+  begin
+    Application.MessageBox('O campo Modelo deve ser preenchido!', 'Atenção', MB_OK + MB_ICONINFORMATION);
+    PageControl1.TabIndex := 1;
+    edtModelo.SetFocus;
+    abort;
+  end;
+
+  if Trim(edtChassi.Text) = '' then
+  begin
+    Application.MessageBox('O campo Chassi deve ser preenchido!', 'Atenção', MB_OK + MB_ICONINFORMATION);
+    edtChassi.SetFocus;
+    abort;
+  end;
+
+  if (Trim(edtPlaca.Text) = '') or (Trim(edtRenavam.Text) = '') or (Trim(cbPlacaUF.Text) = '') then
+  begin
+    Application.MessageBox('Os campos Placa, Renavam e UF da Placa devem ser preenchidos!', 'Atenção', MB_OK + MB_ICONINFORMATION);
+    edtPlaca.SetFocus;
+    abort;
+  end;
+
+  if (Trim(edtAnoModelo.Text) = '') or (Trim(edtAnoFab.Text) = '') then
+  begin
+    Application.MessageBox('Os campos Ano Modelo e Ano Fabricação devem ser preenchidos!', 'Atenção', MB_OK + MB_ICONINFORMATION);
+    edtAnoModelo.SetFocus;
+    abort;
+  end;
+
+  if Trim(cbCondicao.Text) = '' then
+  begin
+    Application.MessageBox('O campo Condição deve ser preenchido!', 'Atenção', MB_OK + MB_ICONINFORMATION);
+    cbCondicao.SetFocus;
+    abort;
+  end;
+
+  if Trim(cbCombustivel.Text) = '' then
+  begin
+    Application.MessageBox('O campo Combustível deve ser preenchido!', 'Atenção', MB_OK + MB_ICONINFORMATION);
+    cbCombustivel.SetFocus;
+    abort;
+  end;
+
+  dmVeiculos.cdsVeiculos.Edit;
+  dmVeiculos.cdsVeiculos.Post;
+  dmVeiculos.cdsVeiculos.ApplyUpdates(0);
+  Application.MessageBox('Registro incluído com sucesso', 'Atenção', MB_OK + MB_ICONINFORMATION);
+  btnNovo.Enabled := True;
+  btnExcluir.Enabled := True;
+  PageControl1.TabIndex := 0;
+  dmVeiculos.cdsVeiculos.Close;
+end;
+
+procedure TunitCadastroVeiculos.btnNovoClick(Sender: TObject);
+begin
+  inherited;
+  dmVeiculos.cdsVeiculos.Open;
+  dmVeiculos.cdsVeiculos.Insert;
+  edtDescInterna.SetFocus;
+  btnNovo.Enabled := False;
+  btnExcluir.Enabled := False;
+end;
+
+procedure TunitCadastroVeiculos.btnPesquisarClick(Sender: TObject);
+begin
+  inherited;
+  TunitPesquisaVeiculos.Create(nil);
+  try
+    unitPesquisaVeiculos.ShowModal;
+  finally
+    unitPesquisaVeiculos.Free;
+  end;
+end;
+
+procedure TunitCadastroVeiculos.DBEdit1KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  inherited;
+  if key = VK_F3 then
+  begin
+    TunitPesquisaVeiculos.Create(nil);
+    try
+      unitPesquisaVeiculos.ShowModal;
+    finally
+      unitPesquisaVeiculos.Free;
+    end;
+  end
+
+  else
+    abort
+
+end;
+
+procedure TunitCadastroVeiculos.FormCreate(Sender: TObject);
+begin
+  inherited;
+  PageControl1.TabIndex := 0;
+end;
+
+procedure TunitCadastroVeiculos.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  inherited;
+  if key = VK_RETURN then
+  begin
+    Perform(WM_NEXTDLGCTL,1,0);
+  end;
+end;
+
+procedure TunitCadastroVeiculos.FormShow(Sender: TObject);
+begin
+  inherited;
+    dmVeiculos.cdsVeiculos.Close;
+end;
+
+end.

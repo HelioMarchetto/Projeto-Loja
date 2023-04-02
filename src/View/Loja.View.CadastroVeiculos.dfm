@@ -1,6 +1,7 @@
 inherited unitCadastroVeiculos: TunitCadastroVeiculos
   Caption = 'Cadastro de Ve'#237'culos'
   Font.Height = -13
+  OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnShow = FormShow
   PixelsPerInch = 96
@@ -294,7 +295,7 @@ inherited unitCadastroVeiculos: TunitCadastroVeiculos
         Height = 24
         DataField = 'NUM_PROP'
         DataSource = DataSource1
-        TabOrder = 1
+        TabOrder = 10
       end
       object edtCor: TDBEdit
         Left = 461
@@ -303,7 +304,7 @@ inherited unitCadastroVeiculos: TunitCadastroVeiculos
         Height = 24
         DataField = 'COR'
         DataSource = DataSource1
-        TabOrder = 2
+        TabOrder = 5
       end
       object edtAnoModelo: TDBEdit
         Left = 23
@@ -312,7 +313,7 @@ inherited unitCadastroVeiculos: TunitCadastroVeiculos
         Height = 24
         DataField = 'ANO_MODELO'
         DataSource = DataSource1
-        TabOrder = 3
+        TabOrder = 6
       end
       object edtAnoFab: TDBEdit
         Left = 175
@@ -321,7 +322,7 @@ inherited unitCadastroVeiculos: TunitCadastroVeiculos
         Height = 24
         DataField = 'ANO_FABRICACAO'
         DataSource = DataSource1
-        TabOrder = 4
+        TabOrder = 7
       end
       object cbCombustivel: TDBComboBox
         Left = 461
@@ -336,16 +337,16 @@ inherited unitCadastroVeiculos: TunitCadastroVeiculos
           'Flex'
           'Disel'
           'GNV')
-        TabOrder = 5
+        TabOrder = 9
       end
       object edtChassi: TDBEdit
         Left = 461
-        Top = 39
+        Top = 42
         Width = 186
         Height = 24
         DataField = 'CHASSI'
         DataSource = DataSource1
-        TabOrder = 6
+        TabOrder = 1
       end
       object cbCondicao: TDBComboBox
         Left = 319
@@ -358,7 +359,7 @@ inherited unitCadastroVeiculos: TunitCadastroVeiculos
           'Novo'
           'Semi-Novo'
           'Usado')
-        TabOrder = 7
+        TabOrder = 8
       end
       object edtPlaca: TDBEdit
         Left = 23
@@ -367,7 +368,7 @@ inherited unitCadastroVeiculos: TunitCadastroVeiculos
         Height = 24
         DataField = 'PLACA'
         DataSource = DataSource1
-        TabOrder = 8
+        TabOrder = 2
       end
       object edtRenavam: TDBEdit
         Left = 175
@@ -376,7 +377,7 @@ inherited unitCadastroVeiculos: TunitCadastroVeiculos
         Height = 24
         DataField = 'RENAVAM'
         DataSource = DataSource1
-        TabOrder = 9
+        TabOrder = 3
       end
       object cbPlacaUF: TDBComboBox
         Left = 351
@@ -413,7 +414,7 @@ inherited unitCadastroVeiculos: TunitCadastroVeiculos
           'SP'
           'SE'
           'TO')
-        TabOrder = 10
+        TabOrder = 4
       end
     end
   end

@@ -8,7 +8,7 @@ object dmVeiculos: TdmVeiculos
     Params = <>
     ProviderName = 'dspVeiculos'
     BeforePost = cdsVeiculosBeforePost
-    Left = 168
+    Left = 176
     Top = 24
     object cdsVeiculosID: TIntegerField
       FieldName = 'ID'
@@ -19,11 +19,13 @@ object dmVeiculos: TdmVeiculos
     object cdsVeiculosDESCRICAO_INTERNA: TStringField
       FieldName = 'DESCRICAO_INTERNA'
       Origin = 'DESCRICAO_INTERNA'
+      Required = True
       Size = 50
     end
     object cdsVeiculosDESCRICAO_OFICIAL: TStringField
       FieldName = 'DESCRICAO_OFICIAL'
       Origin = 'DESCRICAO_OFICIAL'
+      Required = True
       Size = 50
     end
     object cdsVeiculosGRUPO: TStringField
