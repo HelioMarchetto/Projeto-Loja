@@ -1,15 +1,25 @@
 inherited unitPesquisaVeiculos: TunitPesquisaVeiculos
+  BorderStyle = bsSingle
   Caption = 'Pesquisa de Veiculos'
+  ClientHeight = 484
+  ClientWidth = 734
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlPesquisar: TPanel
+    Width = 734
     inherited btnPesquisar: TButton
+      Left = 634
       OnClick = btnPesquisarClick
     end
   end
   inherited pnlGrid: TPanel
+    Width = 734
+    Height = 337
     inherited DBGrid1: TDBGrid
+      Width = 732
+      Height = 335
       DataSource = unitCadastroVeiculos.DataSource1
+      ReadOnly = True
       OnTitleClick = DBGrid1TitleClick
       Columns = <
         item
@@ -96,7 +106,10 @@ inherited unitPesquisaVeiculos: TunitPesquisaVeiculos
     end
   end
   inherited pnlButaoOk: TPanel
+    Top = 410
+    Width = 734
     inherited btnOk: TButton
+      Left = 634
       OnClick = btnOkClick
     end
   end

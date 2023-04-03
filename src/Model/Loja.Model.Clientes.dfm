@@ -1,20 +1,21 @@
 object dmClientes: TdmClientes
   OldCreateOrder = False
-  Height = 252
-  Width = 320
+  Height = 245
+  Width = 342
   object dspClientes: TDataSetProvider
     DataSet = sqlClientes
     Options = [poAllowCommandText, poUseQuoteChar]
-    Left = 216
-    Top = 136
+    Left = 104
+    Top = 24
   end
   object cdsClientes: TClientDataSet
+    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'dspClientes'
     BeforePost = cdsClientesBeforePost
-    Left = 80
-    Top = 144
+    Left = 176
+    Top = 24
     object cdsClientesID: TIntegerField
       FieldName = 'ID'
       Origin = 'ID'
@@ -81,18 +82,20 @@ object dmClientes: TdmClientes
     end
   end
   object sqlClientes: TFDQuery
+    Active = True
     ConstraintsEnabled = True
     Connection = dmConexao.dmConexao
     SQL.Strings = (
       'SELECT * FROM TABELA_CLIENTE ORDER BY ID')
-    Left = 104
-    Top = 72
+    Left = 24
+    Top = 24
   end
   object sqlGen: TFDQuery
+    Active = True
     Connection = dmConexao.dmConexao
     SQL.Strings = (
       'SELECT GEN_ID (id_cliente,1)  AS ID_ATUAL FROM RDB$DATABASE')
-    Left = 216
-    Top = 64
+    Left = 24
+    Top = 96
   end
 end

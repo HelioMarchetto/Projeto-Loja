@@ -1,5 +1,8 @@
 inherited unitCadastroVeiculos: TunitCadastroVeiculos
+  BorderStyle = bsSingle
   Caption = 'Cadastro de Ve'#237'culos'
+  ClientHeight = 527
+  ClientWidth = 728
   Font.Height = -13
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
@@ -7,6 +10,7 @@ inherited unitCadastroVeiculos: TunitCadastroVeiculos
   PixelsPerInch = 96
   TextHeight = 16
   inherited pnlPesquisa: TPanel
+    Width = 728
     BevelOuter = bvNone
     inherited lblPesquisar: TLabel
       Width = 55
@@ -26,7 +30,7 @@ inherited unitCadastroVeiculos: TunitCadastroVeiculos
       ExplicitHeight = 24
     end
     inherited btnPesquisar: TButton
-      Left = 617
+      Left = 627
       Top = 3
       Height = 63
       OnClick = btnPesquisarClick
@@ -46,32 +50,34 @@ inherited unitCadastroVeiculos: TunitCadastroVeiculos
     end
   end
   inherited pnlBotoes: TPanel
+    Top = 462
+    Width = 728
     ExplicitLeft = 0
     ExplicitTop = 452
     ExplicitWidth = 718
     inherited btnFechar: TButton
-      Left = 625
+      Left = 635
       Width = 89
       OnClick = btnFecharClick
       ExplicitLeft = 625
       ExplicitWidth = 89
     end
     inherited btnExcluir: TButton
-      Left = 530
+      Left = 540
       Width = 89
       OnClick = btnExcluirClick
       ExplicitLeft = 530
       ExplicitWidth = 89
     end
     inherited btnGravar: TButton
-      Left = 340
+      Left = 350
       Width = 89
       OnClick = btnGravarClick
       ExplicitLeft = 340
       ExplicitWidth = 89
     end
     inherited btnNovo: TButton
-      Left = 245
+      Left = 255
       Width = 89
       OnClick = btnNovoClick
       ExplicitLeft = 245
@@ -79,7 +85,7 @@ inherited unitCadastroVeiculos: TunitCadastroVeiculos
     end
     object btnCancelar: TButton
       AlignWithMargins = True
-      Left = 435
+      Left = 445
       Top = 4
       Width = 89
       Height = 57
@@ -90,16 +96,19 @@ inherited unitCadastroVeiculos: TunitCadastroVeiculos
       Images = ImageList1
       TabOrder = 4
       OnClick = btnCancelarClick
+      ExplicitLeft = 435
     end
   end
   object PageControl1: TPageControl [2]
     Left = 0
     Top = 69
-    Width = 718
-    Height = 383
+    Width = 728
+    Height = 393
     ActivePage = TabSheet1
     Align = alClient
     TabOrder = 2
+    ExplicitWidth = 718
+    ExplicitHeight = 383
     object TabSheet1: TTabSheet
       Caption = 'Dados Principais'
       object Label1: TLabel

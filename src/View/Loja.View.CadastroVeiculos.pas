@@ -197,6 +197,7 @@ begin
     unitPesquisaVeiculos.ShowModal;
     btnNovo.Enabled := True;
     btnExcluir.Enabled := True;
+    edtPesquisar.Text := edtDescOficial.Text;
   finally
     unitPesquisaVeiculos.Free;
   end;
@@ -211,6 +212,9 @@ begin
     TunitPesquisaVeiculos.Create(nil);
     try
       unitPesquisaVeiculos.ShowModal;
+      btnNovo.Enabled := True;
+      btnExcluir.Enabled := True;
+      edtPesquisar.Text := edtDescOficial.Text;
     finally
       unitPesquisaVeiculos.Free;
     end;
